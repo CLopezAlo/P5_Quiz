@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>P5_Quiz</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Quizzes</h1>
+    <p>Lista de Quizzes:</p>
+    <ul>
+    <% for (var i in quizzes) { %>
+    <% var quiz = quizzes[i]; %>
+    <li><%= quiz.question %> : <%= quiz.answer %></li> 
+    <% } %>
+    </ul>
+    <p>
+    <a href="/">Home</a>
+    <a href="/credits">Credits</a>
+    </p>
+  </body>
+</html>
