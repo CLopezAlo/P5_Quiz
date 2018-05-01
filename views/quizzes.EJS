@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>P5_Quiz</title>
+    <h1>Quizzes</h1>
+  </head>
+  <body>
+  	<p>Lista de Quizzes</p>
+    <ul>
+    <% for (var i in quizzes) { %>
+    <% var quiz = quizzes[i]; %>
+    <li><%= quiz.question %> : <%= quiz.answer %></li>
+    </ul>
+    <% } %>
+  </body>
+</html>
