@@ -1,17 +1,16 @@
 var express = require('express');
 var router = express.Router();
-var quizController = require('../controllers/quiz');
-const Sequelize = require('sequelize');
+
 const sequelize = require('../models/index');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'QUIZ' });
 });
 
 /* GET credits page. */
 router.get('/credits', function(req, res, next) {
-  res.render('credits', { title:'Quiz', name: 'Cristina López Alonso' });
+  res.render('credits', { title:'Credits'});
 });
 
 /* GET quizzes page. */
@@ -20,8 +19,6 @@ router.get('/quizzes', function(req, res, next) {
 	.then( quizzes => {
 		res.render('quizzes', {quizzes});	
 	})
-	.catch(Sequelize.ValidationError, error => {
-	})
-	.catch(error => {
+	.catch(error => next(error));
 });
 module.exports = router;
